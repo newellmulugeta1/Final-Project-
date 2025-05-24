@@ -32,8 +32,6 @@ Developer Manual
 
 Technical setup info below ⬇️
 
----
-
 Developer Manual
 
 Quick Setup
