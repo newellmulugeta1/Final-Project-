@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Businesses - YeneHabeshaHub</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="/">🇪🇹 YeneHabeshaHub</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link" href="/">Home</a>
+                    <a class="nav-link" href="/about">About</a>
+                    <a class="nav-link active" href="/search">Search</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5">
+        <h1 class="mb-4">Find Ethiopian Businesses</h1>
+        
+        <!-- Alert Messages -->
+        <div id="alertContainer"></div>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">➕ Add New Business</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="addBusinessForm">
+                            <div class="mb-3">
+                                <label for="businessName" class="form-label">Business Name *</label>
+                                <input type="text" class="form-control" id="businessName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="businessAddress" class="form-label">Address *</label>
+                                <input type="text" class="form-control" id="businessAddress" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="businessCategory" class="form-label">Category *</label>
+                                <select class="form-select" id="businessCategory" required>
+                                    <option value="">Select Category</option>
+                                    <option value="Restaurant">Restaurant</option>
+                                    <option value="Grocery Store">Grocery Store</option>
+                                    <option value="Church">Church</option>
+                                    <option value="Community Center">Community Center</option>
+                                    <option value="Services">Services</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="businessPhone" class="form-label">Phone</label>
+                                <input type="tel" class="form-control" id="businessPhone">
+                            </div>
+                            <div class="mb-3">
+                                <label for="businessDescription" class="form-label">Description</label>
+                                <textarea class="form-control" id="businessDescription" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-100">Add Business</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h5 class="mb-0">🔍 Filter Businesses</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="categoryFilter" class="form-label">Filter by Category</label>
+                            <select class="form-select" id="categoryFilter">
+                                <option value="">All Categories</option>
+                                <option value="Restaurant">Restaurant</option>
+                                <option value="Grocery Store">Grocery Store</option>
+                                <option value="Church">Church</option>
+                                <option value="Community Center">Community Center</option>
+                                <option value="Services">Services</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <button class="btn btn-secondary w-100" onclick="filterBusinesses()">Apply Filter</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="card mb-4 border-0 shadow-sm">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">📋 Business Directory</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="businessList">
+                            <div class="d-flex justify-content-center py-5">
+                                <div class="spinner-border text-primary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header bg-info text-white">
+                        <h5 class="mb-0">🗺️ Business Locations</h5>
+                    </div>
+                    <div class="card-body">
+                        <div id="searchMap"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-0">&copy; 2024 YeneHabeshaHub. Connecting the Ethiopian community in Silver Spring, MD.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

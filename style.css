@@ -1,0 +1,207 @@
+/* Custom styles for YeneHabeshaHub */
+:root {
+    --ethiopian-green: #009639;
+    --ethiopian-yellow: #FFDE00;
+    --ethiopian-red: #DA020E;
+    --light-gray: #f8f9fa;
+    --border-color: #e9ecef;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, var(--ethiopian-green), var(--ethiopian-yellow));
+    padding: 100px 0;
+    margin-bottom: 0;
+}
+
+.hero-section h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-section p {
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Navigation */
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Cards */
+.card {
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--ethiopian-green);
+    border-color: var(--ethiopian-green);
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #007a2f;
+    border-color: #007a2f;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: var(--ethiopian-red);
+    border-color: var(--ethiopian-red);
+}
+
+.btn-secondary:hover {
+    background-color: #b8011b;
+    border-color: #b8011b;
+}
+
+/* Maps */
+#map, #searchMap {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1;
+}
+
+/* Business Items */
+.business-item {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.business-item:hover {
+    border-color: var(--ethiopian-green);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.business-name {
+    color: var(--ethiopian-green);
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.business-category {
+    background-color: var(--ethiopian-yellow);
+    color: #333;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.business-info {
+    color: #6c757d;
+    margin: 5px 0;
+}
+
+.business-info strong {
+    color: #495057;
+}
+
+/* News Items */
+.news-item {
+    border-left: 4px solid var(--ethiopian-green);
+    padding-left: 20px;
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.news-item:hover {
+    transform: translateX(5px);
+    border-left-color: var(--ethiopian-red);
+}
+
+.news-title {
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.news-title:hover {
+    color: var(--ethiopian-green);
+    text-decoration: underline;
+}
+
+.news-date {
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+/* Chart Container */
+.chart-container {
+    position: relative;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Loading States */
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Alert Styles */
+.alert {
+    border-radius: 8px;
+    border: none;
+    margin-bottom: 20px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    border-left: 4px solid var(--ethiopian-green);
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border-left: 4px solid var(--ethiopian-red);
+}
